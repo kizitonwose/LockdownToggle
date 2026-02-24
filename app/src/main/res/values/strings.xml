@@ -3,11 +3,11 @@
     <string name="test_lockdown">Test Lockdown</string>
     <string name="test_lockdown_desc">Tap this button to immediately activate Lockdown mode if permissions are granted. This functions exactly as clicking the icon in the dropdown menu.</string>
     <string name="test_lockdown_label">Test Lock Now</string>
-    <string name="revoke_da_perm">Revoke Device Administration Permessions</string>
+    <string name="revoke_da_perm">Revoke Device Administration Permissions</string>
     <string name="revoke_da_perm_desc">If you no longer want this app to control device lock, you can remove admin privileges here. Additionally, if you want to uninstall this application you should (and in some coses will have to) revoke these permissions</string>
     <string name="revoke_da_perm_label">Remove Admin Access</string>
-    <string name="request_da_perm">Grant Device Administration Permessions</string>
-    <string name="request_da_perm_desc">What does it do? It allows the Locdown mode intent to be triggered without shortcuts. Why is it needed? Lockdown mode is a safety feature that requires this permission to be invoked without using more vulnerable approaches (ie: a routine that uses Accessibility permissions).</string>
+    <string name="request_da_perm">Grant Device Administration Permissions</string>
+    <string name="request_da_perm_desc">What does it do? It allows the Lockdown mode intent to be triggered without shortcuts. Why is it needed? Lockdown mode is a safety feature that requires this permission to be invoked without using more vulnerable approaches (ie: a routine that uses Accessibility permissions).</string>
     <string name="request_da_perm_label">Request Admin Access</string>
     <string name="quick_lockdown">Quick Lockdown</string>
 </resources>

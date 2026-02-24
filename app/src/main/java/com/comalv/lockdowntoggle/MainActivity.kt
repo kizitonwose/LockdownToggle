@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
                 Intent("android.service.quicksettings.action.REQUEST_QS_TILE").apply {
                     component = ComponentName(this@MainActivity, LockdownTileService::class.java)
                 }
-            startActivity(tileServiceIntent)
+            startService(tileServiceIntent)
 
             Handler(Looper.getMainLooper()).postDelayed({
                 updateRemoveSectionVisibility()

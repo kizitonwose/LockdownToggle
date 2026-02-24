@@ -4,7 +4,12 @@ import android.app.Activity
 import android.app.admin.DevicePolicyManager
 import android.content.ComponentName
 import android.content.Context
+import android.content.Context.VIBRATOR_MANAGER_SERVICE
+import android.content.Context.VIBRATOR_SERVICE
+import android.os.Build
 import android.os.Bundle
+import android.os.Vibrator
+import android.os.VibratorManager
 
 class QuickLockdownActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,7 +21,19 @@ class QuickLockdownActivity : Activity() {
         if (dpm.isAdminActive(adminComponent)) {
             dpm.lockNow()
         }
-
-        finish() // Close the activity immediately
+        vibrate(this)
+        finishAffinity() // Close all activities
     }
 }
+
+private fun vibrate(context: Context) {
+    if (Build.VERSION.SDK_INT >= 31) {
+        (context.getSystemService(VIBRATOR_MANAGER_SERVICE) as VibratorManager)
+            .defaultVibrator.action()
+    } else {
+        (context.getSystemService(VIBRATOR_SERVICE) as Vibrator).action()
+    }
+}
+
+// (longArrayOf(delay, vibrate, sleep, vibrate, sleep....), repeatStartIndex)
+private fun Vibrator.action() = vibrate(longArrayOf(0, 300, 150, 300), -1)
